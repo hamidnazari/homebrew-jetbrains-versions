@@ -1,0 +1,31 @@
+cask "intellij-idea@14.1.7" do
+  version "14.1.7,141.3058"
+
+  name "JetBrains IntelliJ IDEA #{version.before_comma}"
+  desc "Java IDE"
+  homepage "https://www.jetbrains.com/idea/"
+
+  app "IntelliJ IDEA.app"
+
+  url "https://download.jetbrains.com/idea/ideaIU-14.1.7.dmg"
+  sha256 "9cd822c92371e58e3fe9630bb833d55df7290ec3d964785b10c3f8fb00b5cbf7"
+
+  uninstall_postflight do
+    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "idea") }.each do |path|
+      if File.exist?(path) &&
+        File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
+        File.delete(path)
+      end
+    end
+  end
+
+  zap trash: [
+    "~/Library/Application Support/JetBrains/IntelliJIdea#{version.major_minor}",
+    "~/Library/Caches/JetBrains/IntelliJIdea#{version.major_minor}",
+    "~/Library/Logs/JetBrains/IntelliJIdea#{version.major_minor}",
+    "~/Library/Preferences/com.jetbrains.intellij.plist",
+    "~/Library/Preferences/IntelliJIdea#{version.major_minor}",
+    "~/Library/Preferences/jetbrains.idea.*.plist",
+    "~/Library/Saved Application State/com.jetbrains.intellij.savedState",
+  ]
+end

@@ -8,8 +8,7 @@ cask "intellij-idea@2018.2.8" do
   app "IntelliJ IDEA.app"
 
   url "https://download.jetbrains.com/idea/ideaIU-2018.2.8.dmg"
-  sha256 "<html>
-<head><title>502"
+  sha256 "d2e0115b96d1df64976bb1caca0969cb06959e16fcb01b48a55f000a0a3617ee"
 
   uninstall_postflight do
     ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "idea") }.each do |path|

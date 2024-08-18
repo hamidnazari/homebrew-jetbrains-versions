@@ -1,5 +1,5 @@
-cask "intellij-idea@2024.2" do
-  version "2024.2,242.20224.300"
+cask "intellij-idea@2023.1.7" do
+  version "2023.1.7,231.9423.9"
 
   name "JetBrains IntelliJ IDEA #{version.before_comma}"
   desc "Java IDE"
@@ -8,11 +8,11 @@ cask "intellij-idea@2024.2" do
   app "IntelliJ IDEA.app"
 
   if Hardware::CPU.intel?
-      url "https://download.jetbrains.com/idea/ideaIU-2024.2.dmg"
-      sha256 "8e68129e23c9ba55eb2e96b8bbea8cd19f22cddfa8f148ed0e87854d59fa2b03"
+      url "https://download.jetbrains.com/idea/ideaIU-2023.1.7.dmg"
+      sha256 "92d4fe2dc27caae88db39c74aa8843972704ca34c7b6591ac32d9a7ef6f1984d"
   else
-      url "https://download.jetbrains.com/idea/ideaIU-2024.2-aarch64.dmg"
-      sha256 "0c7770f798a506b2e7b5b233723fc2b8865c6deb4ccce6a9697815ee1131c26b"
+      url "https://download.jetbrains.com/idea/ideaIU-2023.1.7-aarch64.dmg"
+      sha256 "6ee321ce8db5f4c974cfaeea07dfd3696f15721d5bd922112b776ea28348861b"
   end
 
   uninstall_postflight do

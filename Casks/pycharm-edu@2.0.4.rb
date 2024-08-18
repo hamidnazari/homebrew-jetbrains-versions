@@ -1,5 +1,5 @@
 cask "pycharm-edu@2.0.4" do
-  version "2.0.4,143.237"
+  version "2.0.4,143.2370.37"
 
   name "JetBrains PyCharm Educational Edition #{version.before_comma}"
   desc "Python IDE"

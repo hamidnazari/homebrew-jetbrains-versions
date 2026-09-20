@@ -1,10 +1,12 @@
+
+
 # JetBrains Versions Tap
 
-## How do I install these formulae?
+## How do I install these casks?
 
-`brew install hamidnazari/jetbrains-versions/<formula>`
+`brew install --cask hamidnazari/jetbrains-versions/<cask>`
 
-Or `brew tap hamidnazari/jetbrains-versions` and then `brew install <formula>`.
+Or `brew tap hamidnazari/jetbrains-versions` and then `brew install --cask <cask>`.
 
 ## Documentation
 
